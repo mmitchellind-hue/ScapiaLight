@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scapia Credit Card — Travel Abroad. Not Back To A Forex Counter.</title>
+  <meta name="description" content="Pay anywhere Visa is accepted with zero forex markup. Scapia gives you exchange rates close to the live Google rate — no cash, no forex counters." />
+  <meta property="og:title" content="Scapia — Travel Abroad. Not Back To A Forex Counter." />
+  <meta property="og:description" content="Zero forex markup. Near-Google rates. The smartest way to pay abroad." />
+  <meta property="og:image" content="scapia-card.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23C0392B'/><text x='16' y='22' text-anchor='middle' font-size='18' font-family='sans-serif' font-weight='bold' fill='white'>s</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- X conversion tracking base code -->
+  <script>
+    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+    twq('config','rcfqj');
+  </script>
+  <!-- End X conversion tracking base code -->
+  <style>
+    /* ─── TOKENS ─────────────────────────────────── */
+    :root {
+      --bg:         #f8f7f5;
+      --bg2:        #ffffff;
+      --surface:    #ffffff;
+      --surface2:   #f3f2ef;
+      --border:     rgba(0,0,0,0.08);
+      --border2:    rgba(0,0,0,0.13);
+      --text:       #111111;
+      --text2:      #555555;
+      --text3:      #999999;
+      --scapia:     #C0392B;
+      --scapia2:    #a93226;
+      --scapia-dim: rgba(192,57,43,0.1);
+      --green:      #16a34a;
+      --green-dim:  rgba(22,163,74,0.1);
+      --orange:     #ea6c00;
+      --orange-dim: rgba(234,108,0,0.1);
+      --red:        #dc2626;
+      --red-dim:    rgba(220,38,38,0.1);
+      --blue:       #2563eb;
+      --amber:      #b45309;
+      --amber-dim:  rgba(180,83,9,0.1);
+      --r-sm: 12px; --r-md: 20px; --r-lg: 28px; --r-xl: 40px;
+      --font: 'Inter', system-ui, sans-serif;
+    }
+
+    /* ─── RESET ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text);
+           overflow-x: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: var(--font); }
+    ul { list-style: none; }
+
+    /* ─── UTILITY ────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section-label { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+                     color:var(--scapia2); margin-bottom:16px; }
+    .section-title { font-size:clamp(2rem,4vw,3rem); font-weight:800; line-height:1.15;
+                     letter-spacing:-.03em; margin-bottom:16px; }
+    .section-sub { font-size:1.05rem; color:var(--text2); max-width:520px; line-height:1.7; }
+
+    /* ─── ANIMATIONS ─────────────────────────────── */
+    @keyframes float     { 0%,100%{transform:translateY(0) rotate(-4deg)} 50%{transform:translateY(-18px) rotate(-4deg)} }
+    @keyframes pulse-glow{ 0%,100%{box-shadow:0 0 0 0 rgba(192,57,43,0)} 50%{box-shadow:0 0 40px 8px rgba(192,57,43,0.18)} }
+    @keyframes ticker    { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes spin      { to{transform:rotate(360deg)} }
+    @keyframes blink     { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    @keyframes shimmer   { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
+    @keyframes routePulse{ 0%,100%{stroke-opacity:.15} 50%{stroke-opacity:.45} }
+    @keyframes dotPulse  { 0%,100%{r:4;opacity:.9} 50%{r:6;opacity:1} }
+
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ─── NAV ────────────────────────────────────── */
+    nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 24px;
+          transition:background .35s, backdrop-filter .35s, border-bottom .35s; }
+    nav.scrolled { background:rgba(248,247,245,0.94); backdrop-filter:blur(24px);
+                   border-bottom:1px solid var(--border); }
+    .nav-inner { max-width:1160px; margin:0 auto; display:flex; align-items:center;
+                 justify-content:space-between; height:68px; }
+    .nav-logo img { height:28px; width:auto; filter:none; }
+    .nav-links { display:flex; align-items:center; gap:32px; }
+    .nav-links a { font-size:.875rem; font-weight:500; color:var(--text2); transition:color .2s; }
+    .nav-links a:hover { color:var(--text); }
+    .nav-cta { background:var(--scapia); color:#fff; padding:10px 20px; border-radius:100px;
+               font-size:.875rem; font-weight:600; transition:background .2s, transform .15s; }
+    .nav-cta:hover { background:var(--scapia2); transform:translateY(-1px); }
+    .nav-mobile-toggle { display:none; }
+    @media(max-width:768px){
+      .nav-links { display:none; }
+      .nav-mobile-toggle { display:flex; align-items:center; justify-content:center; width:40px; height:40px; }
+    }
+
+    /* ─── HERO ───────────────────────────────────── */
+    .hero { min-height:100svh; display:grid; place-items:center;
+            padding:120px 24px 80px; position:relative; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; z-index:0;
+      background:radial-gradient(ellipse 80% 60% at 60% 40%, rgba(192,57,43,0.06) 0%, transparent 65%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(37,99,235,0.04) 0%, transparent 60%),
+                var(--bg); }
+    .hero-bg::before { content:''; position:absolute; inset:0;
+      background-image:linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+      background-size:80px 80px;
+      mask-image:radial-gradient(ellipse at center, black 0%, transparent 72%); }
+    .hero-grid { position:relative; z-index:1; display:grid;
+                 grid-template-columns:1fr 1fr; align-items:center; gap:64px;
+                 max-width:1160px; width:100%; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:8px;
+      background:rgba(192,57,43,0.08); border:1px solid rgba(192,57,43,0.25);
+      color:var(--scapia2); font-size:.8rem; font-weight:600; letter-spacing:.06em;
+      text-transform:uppercase; padding:6px 14px; border-radius:100px; margin-bottom:24px; }
+    .hero-eyebrow .dot { width:6px; height:6px; border-radius:50%; background:var(--scapia2);
+                         animation:blink 2s infinite; }
+    .hero h1 { font-size:clamp(2.4rem,5vw,4rem); font-weight:800; line-height:1.1;
+               letter-spacing:-0.03em; margin-bottom:24px; }
+    .hero h1 em { font-style:normal; color:var(--scapia2); }
+    .hero-sub { font-size:1.125rem; line-height:1.7; color:var(--text2);
+                max-width:480px; margin-bottom:40px; }
+    .hero-actions { display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+    .btn-primary { background:var(--scapia); color:#fff; padding:15px 32px; border-radius:100px;
+      font-size:1rem; font-weight:700; display:inline-block;
+      transition:background .2s, transform .15s, box-shadow .2s;
+      animation:pulse-glow 3s ease infinite; }
+    .btn-primary:hover { background:var(--scapia2); transform:translateY(-2px);
+                         box-shadow:0 8px 24px rgba(192,57,43,0.3); }
+    .btn-primary-lg { font-size:1.1rem; padding:18px 44px; }
+    .hero-stats { display:flex; gap:40px; margin-top:48px; flex-wrap:wrap; }
+    .stat-number { font-size:1.75rem; font-weight:800; }
+    .stat-label { font-size:.8rem; color:var(--text2); margin-top:2px; }
+    .stat-free { color:var(--green); }
+
+    /* Card + badges */
+    .hero-visual { display:flex; align-items:center; justify-content:center; position:relative; }
+    .card-wrap { position:relative; animation:float 5s ease-in-out infinite;
+                 filter:drop-shadow(0 40px 80px rgba(192,57,43,0.25)); }
+    .card-wrap img { width:clamp(260px,40vw,380px); border-radius:20px; }
+    .badge { position:absolute; background:rgba(255,255,255,0.88); backdrop-filter:blur(20px);
+             border:1px solid rgba(0,0,0,0.1); border-radius:var(--r-md);
+             padding:12px 16px; white-space:nowrap;
+             box-shadow:0 8px 32px rgba(0,0,0,0.1); }
+    .badge-rate    { top:-20px; left:-60px; }
+    .badge-scapia-rate { top:60px; left:-80px; }
+    .badge-accept  { bottom:40px; right:-50px; }
+    .badge-label   { font-size:.7rem; color:var(--text3); font-weight:500; margin-bottom:2px; }
+    .badge-value   { font-size:1.1rem; font-weight:700; }
+    .badge-value.green { color:var(--green); }
+
+    @media(max-width:900px){
+      .hero-grid { grid-template-columns:1fr; text-align:center; gap:48px; }
+      .hero-sub { margin-left:auto; margin-right:auto; }
+      .hero-actions { justify-content:center; }
+      .hero-stats { justify-content:center; }
+      .badge-rate { top:-10px; left:-20px; }
+      .badge-scapia-rate { top:64px; left:-28px; }
+      .badge-accept { bottom:20px; right:-20px; }
+    }
+
+    /* ─── TICKER ─────────────────────────────────── */
+    .ticker-wrap { overflow:hidden; border-top:1px solid var(--border);
+                   border-bottom:1px solid var(--border); background:#faf9f7; padding:14px 0; }
+    .ticker-track { display:flex; gap:48px; animation:ticker 28s linear infinite; width:max-content; }
+    .ticker-item { display:flex; align-items:center; gap:10px; font-size:.85rem;
+                   color:var(--text2); white-space:nowrap; }
+    .ticker-item .dot { width:5px; height:5px; border-radius:50%; background:var(--scapia); }
+
+    /* ─── RATES + CALCULATOR (merged) ───────────── */
+    .rates-section { background:#f8f7f5; }
+    .rates-layout { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; margin-top:56px; }
+
+    /* Left: rate cards */
+    .rates-panel { display:flex; flex-direction:column; gap:16px; }
+    .rates-panel-header { display:flex; align-items:center; justify-content:space-between;
+                          margin-bottom:8px; }
+    .rates-panel-title { font-size:.9rem; font-weight:600; color:var(--text2); }
+    .rates-meta { display:flex; align-items:center; gap:8px; font-size:.8rem; color:var(--text3); }
+    .live-dot { width:8px; height:8px; border-radius:50%; background:var(--green);
+                animation:blink 2s ease infinite; }
+    .rate-card { background:#ffffff; border:1px solid rgba(0,0,0,0.08); border-radius:var(--r-lg);
+                 padding:24px 28px; display:flex; align-items:center; justify-content:space-between;
+                 transition:transform .2s, border-color .2s;
+                 box-shadow:0 2px 8px rgba(0,0,0,0.04); }
+    .rate-card:hover { transform:translateY(-2px); border-color:rgba(0,0,0,0.14); box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+    .rate-card.featured { border-color:rgba(22,163,74,0.35);
+      background:linear-gradient(135deg,rgba(22,163,74,0.06) 0%,#ffffff 100%); }
+    .rc-left {}
+    .rc-name { font-size:.8rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em;
+               color:var(--text3); margin-bottom:4px; }
+    .rc-badge { display:inline-block; font-size:.65rem; font-weight:700; padding:2px 8px;
+                border-radius:100px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:2px; }
+    .badge-green   { background:var(--green-dim);   color:var(--green); }
+    .badge-neutral { background:rgba(0,0,0,0.06); color:var(--text2); }
+    .badge-orange  { background:var(--orange-dim);  color:var(--orange); }
+    .badge-red     { background:var(--red-dim);     color:var(--red); }
+    .rc-spread { font-size:.72rem; color:var(--text3); margin-top:3px; }
+    .rc-value { font-size:1.9rem; font-weight:800; letter-spacing:-.04em;
+                transition:all .4s ease; min-width:110px; text-align:right; }
+    .rc-value.green  { color:var(--green); }
+    .rc-value.orange { color:var(--orange); }
+    .rc-value.red    { color:var(--red); }
+
+    /* Right: calculator */
+    .calc-panel { background:#ffffff; border:1px solid var(--border2);
+                  border-radius:var(--r-xl); padding:40px; position:sticky; top:88px;
+                  box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+    .calc-panel-title { font-size:1rem; font-weight:700; color:var(--text2); margin-bottom:28px; }
+    .calc-usd-display { font-size:3rem; font-weight:800; letter-spacing:-.05em;
+                        color:var(--text); margin-bottom:4px; }
+    .calc-usd-sub { font-size:.8rem; color:var(--text3); margin-bottom:28px; }
+    .slider-wrap { margin-bottom:28px; }
+    .slider-labels { display:flex; justify-content:space-between; font-size:.75rem;
+                     color:var(--text3); margin-top:8px; }
+    input[type="range"] { width:100%; -webkit-appearance:none; height:4px;
+      background:rgba(0,0,0,0.12); border-radius:100px; outline:none; accent-color:var(--scapia); }
+    input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:22px; height:22px;
+      border-radius:50%; background:var(--scapia); box-shadow:0 0 0 4px rgba(192,57,43,0.2);
+      cursor:pointer; transition:box-shadow .2s; }
+    input[type="range"]:hover::-webkit-slider-thumb { box-shadow:0 0 0 8px rgba(192,57,43,0.2); }
+
+    .calc-results { display:flex; flex-direction:column; gap:10px; }
+    .calc-row { display:flex; justify-content:space-between; align-items:center;
+                background:#faf9f7; border:1px solid var(--border);
+                border-radius:var(--r-sm); padding:14px 18px; }
+    .calc-row.best { border-color:rgba(34,197,94,0.35); background:var(--green-dim); }
+    .cr-left { display:flex; align-items:center; gap:10px; }
+    .cr-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+    .cr-name { font-size:.85rem; font-weight:500; color:var(--text2); }
+    .cr-right { display:flex; align-items:center; gap:10px; }
+    .cr-value { font-size:1rem; font-weight:700; }
+    .cr-best { font-size:.68rem; font-weight:700; color:var(--green); background:var(--green-dim);
+               padding:2px 8px; border-radius:100px; }
+
+    @media(max-width:960px){
+      .rates-layout { grid-template-columns:1fr; }
+      .calc-panel { position:static; }
+    }
+
+    /* ─── AIRPORT BENEFITS ───────────────────────── */
+    .airport-section {
+      background: #fff8f0;
+      position: relative;
+      overflow: hidden;
+    }
+    .airport-section::before {
+      content:''; position:absolute; inset:0;
+      background:
+        radial-gradient(ellipse 70% 60% at 75% 40%, rgba(180,83,9,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(192,57,43,0.04) 0%, transparent 55%);
+      pointer-events:none;
+    }
+    .airport-inner { position:relative; z-index:1; }
+    .airport-layout {
+      display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
+    }
+    .airport-headline-sub {
+      font-size:1.1rem; color:var(--text2); line-height:1.75;
+      margin-bottom:20px; max-width:440px;
+    }
+    .airport-free-tag {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.25);
+      color:var(--amber); font-size:.78rem; font-weight:700;
+      letter-spacing:.06em; text-transform:uppercase;
+      padding:6px 14px; border-radius:100px; margin-bottom:32px;
+    }
+    .airport-cta-group { display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-top:40px; }
+    .airport-fine { font-size:.78rem; color:var(--text3); line-height:1.6; margin-top:20px; }
+    .airport-fine strong { color:var(--text2); }
+
+    /* The main visual card */
+    .airport-card {
+      background: #ffffff;
+      border: 1px solid rgba(180,83,9,0.18);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(180,83,9,0.12), 0 4px 20px rgba(0,0,0,0.06);
+      transform: perspective(1200px) rotateY(-3deg) rotateX(1deg);
+      transition: transform .4s ease;
+    }
+    .airport-card:hover {
+      transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+    }
+
+    /* Top amber band */
+    .airport-card-top {
+      padding: 36px 36px 30px;
+      background: linear-gradient(135deg, #fffbf0 0%, #fff8e6 100%);
+      border-bottom: 1px solid rgba(180,83,9,0.12);
+      position: relative;
+    }
+    .airport-card-eyebrow {
+      font-size:.7rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:.1em; color:var(--amber);
+      display:flex; align-items:center; gap:7px; margin-bottom:20px;
+    }
+    .adot { width:5px; height:5px; border-radius:50%; background:var(--amber); animation:blink 2s infinite; }
+
+    /* Big ₹1,000 number */
+    .airport-amount-wrap { display:flex; align-items:flex-end; gap:12px; margin-bottom:8px; }
+    .airport-amount {
+      font-size: clamp(3.5rem,7vw,5.5rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      color: var(--amber);
+      line-height: 1;
+    }
+    .airport-amount-badge {
+      background: rgba(245,158,11,0.15);
+      border: 1px solid rgba(245,158,11,0.3);
+      color: var(--amber);
+      font-size: .72rem; font-weight:800;
+      padding: 4px 10px; border-radius: 100px;
+      margin-bottom: 10px;
+      text-transform: uppercase; letter-spacing:.06em;
+    }
+    .airport-amount-sub {
+      font-size: 1rem; font-weight:600; color:var(--text2); margin-bottom:4px;
+    }
+    .airport-amount-qualifier {
+      font-size:.78rem; color:var(--text3);
+    }
+
+    /* Perk rows */
+    .airport-card-body { padding:28px 36px 36px; }
+    .airport-perks { display:flex; flex-direction:column; gap:0; margin-bottom:24px; }
+    .airport-perk {
+      display:flex; align-items:center; gap:16px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+    .airport-perk:last-child { border-bottom:none; }
+    .airport-perk-icon {
+      width:40px; height:40px; border-radius:10px; flex-shrink:0;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.15rem;
+    }
+    .icon-food  { background:rgba(249,115,22,0.12); }
+    .icon-shop  { background:rgba(139,92,246,0.12); }
+    .icon-spa   { background:rgba(34,197,94,0.1); }
+    .airport-perk-label { font-size:.95rem; font-weight:600; color:var(--text); margin-bottom:2px; }
+    .airport-perk-desc  { font-size:.78rem; color:var(--text3); }
+
+    /* Unlock pill */
+    .airport-unlock {
+      background: #fffbf0;
+      border: 1px solid rgba(180,83,9,0.15);
+      border-radius: var(--r-sm);
+      padding: 14px 18px;
+      font-size:.8rem; color:var(--text2); line-height:1.65;
+    }
+    .airport-unlock strong { color:var(--amber); }
+
+    /* Lounge note */
+    .airport-lounge-note {
+      margin-top:14px; padding-top:14px;
+      border-top:1px solid rgba(0,0,0,0.08);
+      font-size:.78rem; color:var(--text3);
+      font-style:italic; line-height:1.6;
+    }
+
+    @media(max-width:960px){
+      .airport-layout { grid-template-columns:1fr; gap:52px; }
+      .airport-card { transform:none; }
+    }
+
+    /* ─── CASH vs SCAPIA ─────────────────────────── */
+    .compare-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:24px;
+                    align-items:start; margin-top:56px; }
+    .compare-col { background:#ffffff; border:1px solid var(--border);
+                   border-radius:var(--r-xl); overflow:hidden;
+                   box-shadow:0 2px 12px rgba(0,0,0,0.05); }
+    .compare-col.better { border-color:rgba(34,197,94,0.3); }
+    .compare-header { padding:24px; border-bottom:1px solid rgba(0,0,0,0.07);
+                      display:flex; align-items:center; gap:14px; }
+    .compare-header-icon { font-size:1.5rem; }
+    .compare-header-title { font-size:1rem; font-weight:700; }
+    .compare-header-sub { font-size:.75rem; color:var(--text3); }
+    .compare-row { display:flex; align-items:center; gap:14px; padding:16px 24px;
+                   border-bottom:1px solid rgba(0,0,0,0.07); transition:background .15s; }
+    .compare-row:last-child { border-bottom:none; }
+    .compare-row:hover { background:rgba(0,0,0,0.02); }
+    .compare-row-icon { font-size:1.1rem; width:28px; text-align:center; }
+    .compare-row-text { font-size:.875rem; color:var(--text2); line-height:1.4; }
+    .compare-row-text.neg { color:var(--red); }
+    .compare-row-text.pos { color:var(--green); }
+    .compare-vs { display:flex; align-items:center; justify-content:center;
+                  width:48px; align-self:center; }
+    .vs-pill { background:#ffffff; border:1px solid var(--border);
+               border-radius:100px; padding:8px 12px;
+               font-size:.8rem; font-weight:700; color:var(--text3);
+               box-shadow:0 2px 8px rgba(0,0,0,0.07); }
+    @media(max-width:768px){ .compare-grid { grid-template-columns:1fr; gap:16px; }
+                              .compare-vs { display:none; } }
+
+    /* ─── TRUST ──────────────────────────────────── */
+    .trust-section { background:#f8f7f5; }
+    .trust-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:56px; }
+    .trust-card { background:#ffffff; border:1px solid rgba(0,0,0,0.08);
+                  border-radius:var(--r-xl); padding:36px; transition:transform .2s, border-color .2s, box-shadow .2s;
+                  box-shadow:0 2px 12px rgba(0,0,0,0.04); }
+    .trust-card:hover { transform:translateY(-4px); border-color:rgba(192,57,43,0.25); box-shadow:0 12px 40px rgba(0,0,0,0.1); }
+    .trust-icon { width:52px; height:52px; background:var(--scapia-dim); border-radius:var(--r-sm);
+                  display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:24px; }
+    .trust-title { font-size:1.1rem; font-weight:700; margin-bottom:10px; }
+    .trust-body { font-size:.875rem; color:var(--text2); line-height:1.7; }
+    @media(max-width:600px){ .trust-grid { grid-template-columns:1fr; } }
+
+    /* ─── WORLD MAP ──────────────────────────────── */
+    .world-section { background:#f3f2ef; }
+    .world-inner { text-align:center; }
+    .world-map-wrap {
+      margin-top:56px;
+      border-radius: var(--r-xl);
+      border: 1px solid rgba(0,0,0,0.1);
+      overflow: hidden;
+      background: #0a0a0a;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    }
+    .world-img-wrap {
+      position: relative;
+      width: 100%;
+      line-height: 0;
+    }
+    .world-map-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      opacity: 0.92;
+      /* Tint the red outlines to match Scapia's red — the image is pure red on black,
+         so we use hue-rotate + saturate to shift toward our brand red (#C0392B) */
+      filter: hue-rotate(-8deg) saturate(0.85) brightness(0.95);
+    }
+
+    /* City pin dots */
+    .map-pin {
+      position: absolute;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #C0392B;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.3), 0 0 12px 4px rgba(192,57,43,0.4);
+      transform: translate(-50%, -50%);
+      cursor: default;
+      transition: transform .2s;
+    }
+    .map-pin::before {
+      /* Pulse ring */
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(192,57,43,0.5);
+      animation: pinPulse 2.5s ease-out infinite;
+    }
+    .map-pin::after {
+      /* Tooltip */
+      content: attr(data-city);
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(10,10,10,0.95);
+      border: 1px solid rgba(192,57,43,0.5);
+      color: #f5f5f5;
+      font-size: .72rem;
+      font-weight: 600;
+      font-family: var(--font);
+      white-space: nowrap;
+      padding: 5px 10px;
+      border-radius: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .map-pin:hover { transform: translate(-50%, -50%) scale(1.4); }
+    .map-pin:hover::after { opacity: 1; }
+
+    @keyframes pinPulse {
+      0%   { transform: scale(1);   opacity: 0.8; }
+      70%  { transform: scale(2.2); opacity: 0; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .world-cities {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:12px;
+      padding:24px; border-top:1px solid rgba(255,255,255,0.1);
+      background: #111111;
+    }
+    .world-city { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.07);
+                  border:1px solid rgba(255,255,255,0.12); border-radius:100px; padding:8px 16px;
+                  font-size:.82rem; font-weight:500; color:#e5e5e5; }
+
+    /* ─── FAQ ────────────────────────────────────── */
+    .faq-list { margin-top:56px; max-width:740px; margin-left:auto; margin-right:auto; }
+    .faq-item { border-bottom:1px solid rgba(0,0,0,0.09); }
+    .faq-q { width:100%; display:flex; justify-content:space-between; align-items:center;
+              padding:22px 0; text-align:left; font-size:1rem; font-weight:600; color:var(--text);
+              background:none; border:none; cursor:pointer; gap:16px; }
+    .faq-q svg { flex-shrink:0; transition:transform .3s; }
+    .faq-q[aria-expanded="true"] svg { transform:rotate(45deg); }
+    .faq-a { font-size:.9rem; line-height:1.75; color:var(--text2);
+              max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; }
+    .faq-a.open { max-height:300px; padding-bottom:20px; }
+
+    /* ─── FINAL CTA ──────────────────────────────── */
+    .cta-section { padding:120px 24px; text-align:center; position:relative; overflow:hidden;
+      background:linear-gradient(160deg, #fff5f4 0%, #fef9f5 50%, #f8f7f5 100%); }
+    .cta-section::before { content:''; position:absolute; inset:0;
+      background-image:linear-gradient(rgba(192,57,43,0.04) 1px, transparent 1px),
+                       linear-gradient(90deg, rgba(192,57,43,0.04) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse at center, black 0%, transparent 68%); }
+    .cta-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; }
+    .cta-inner h2 { font-size:clamp(2rem,4vw,3.5rem); font-weight:800; letter-spacing:-.03em; margin-bottom:16px; }
+    .cta-inner p { font-size:1.125rem; color:var(--text2); margin-bottom:40px; line-height:1.7; }
+    .cta-card-preview { display:inline-block; margin-bottom:48px; }
+    .cta-card-preview img { width:clamp(160px,24vw,240px);
+      filter:drop-shadow(0 24px 48px rgba(192,57,43,0.3)); animation:float 5s ease-in-out infinite; }
+
+    /* ─── FOOTER ─────────────────────────────────── */
+    footer { border-top:1px solid rgba(0,0,0,0.09); padding:48px 24px; background:#f3f2ef; }
+    .footer-inner { max-width:1160px; margin:0 auto; display:flex; justify-content:space-between;
+                    align-items:flex-start; gap:40px; flex-wrap:wrap; }
+    .footer-logo img { height:24px; filter:none; margin-bottom:12px; }
+    .footer-tagline { font-size:.8rem; color:var(--text3); max-width:220px; line-height:1.6; }
+    .footer-links-col h4 { font-size:.78rem; font-weight:700; letter-spacing:.06em;
+                            text-transform:uppercase; color:var(--text3); margin-bottom:14px; }
+    .footer-links-col a { display:block; font-size:.85rem; color:var(--text2);
+                          margin-bottom:10px; transition:color .2s; }
+    .footer-links-col a:hover { color:var(--text); }
+    .footer-bottom { max-width:1160px; margin:32px auto 0; padding-top:24px;
+                     border-top:1px solid rgba(0,0,0,0.09); display:flex;
+                     justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+    .footer-disclaimer { font-size:.72rem; color:var(--text3); max-width:700px; line-height:1.7; }
+    .footer-copy { font-size:.75rem; color:var(--text3); white-space:nowrap; }
+
+    /* ─── MISC ───────────────────────────────────── */
+    .spin { display:inline-block; width:14px; height:14px; border:2px solid rgba(0,0,0,0.15);
+            border-top-color:var(--text); border-radius:50%; animation:spin .7s linear infinite; }
+    ::-webkit-scrollbar { width:6px; }
+    ::-webkit-scrollbar-track { background:#f0ede8; }
+    ::-webkit-scrollbar-thumb { background:rgba(0,0,0,0.18); border-radius:100px; }
+    @media(prefers-reduced-motion:reduce){ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important} }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────── -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Scapia home">
+      <img src="scapia-logo.png" alt="Scapia" />
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#rates">Exchange Rates</a></li>
+      <li><a href="#airport">Airport Benefits</a></li>
+      <li><a href="#benefits">Why Scapia</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://ankitd.short.gy/Scapia02" class="nav-cta">Apply Now</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" aria-label="Open menu">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none">
+        <rect width="22" height="2" rx="1" fill="#111111"/>
+        <rect y="7" width="16" height="2" rx="1" fill="#111111"/>
+        <rect y="14" width="22" height="2" rx="1" fill="#111111"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────── -->
+<section class="hero" aria-labelledby="hero-headline">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Zero Forex Markup
+      </div>
+      <h1 id="hero-headline">Travel Abroad.<br/><em>Not Back To<br/>A Forex Counter.</em></h1>
+      <p class="hero-sub">Pay anywhere Visa is accepted with zero forex markup and exchange rates that closely track the live Google rate.</p>
+      <div class="hero-actions">
+        <a href="https://ankitd.short.gy/Scapia02" class="btn-primary">Apply Now — It's Free Forever!</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">0%</div>
+          <div class="stat-label">Forex markup</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">190+</div>
+          <div class="stat-label">Countries accepted</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number stat-free">₹0</div>
+          <div class="stat-label">Joining &amp; annual fee</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="card-wrap" role="img" aria-label="Scapia credit card">
+        <img src="scapia-card.png" alt="Scapia Federal Bank Visa Signature Credit Card" loading="eager" />
+        <div class="badge badge-rate">
+          <div class="badge-label">Google Rate</div>
+          <div class="badge-value" id="hero-rate">Loading…</div>
+        </div>
+        <div class="badge badge-scapia-rate">
+          <div class="badge-label">Scapia Rate</div>
+          <div class="badge-value green" id="hero-scapia-rate">Loading…</div>
+        </div>
+        <div class="badge badge-accept">
+          <div class="badge-label">Accepted at</div>
+          <div class="badge-value">100M+ merchants</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TICKER ────────────────────────────────────── -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="dot"></span> Zero forex markup on all international transactions</span>
+    <span class="ticker-item"><span class="dot"></span> Rates closely track the live Google USD/INR rate</span>
+    <span class="ticker-item"><span class="dot"></span> ₹0 joining fee · ₹0 annual fee · Forever</span>
+    <span class="ticker-item"><span class="dot"></span> Up to ₹1,000 back every time you pass a domestic airport</span>
+    <span class="ticker-item"><span class="dot"></span> Accepted everywhere Visa is accepted</span>
+    <span class="ticker-item"><span class="dot"></span> No currency exchange queues ever again</span>
+    <span class="ticker-item"><span class="dot"></span> Zero forex markup on all international transactions</span>
+    <span class="ticker-item"><span class="dot"></span> Rates closely track the live Google USD/INR rate</span>
+    <span class="ticker-item"><span class="dot"></span> ₹0 joining fee · ₹0 annual fee · Forever</span>
+    <span class="ticker-item"><span class="dot"></span> Up to ₹1,000 back every time you pass a domestic airport</span>
+    <span class="ticker-item"><span class="dot"></span> Accepted everywhere Visa is accepted</span>
+    <span class="ticker-item"><span class="dot"></span> No currency exchange queues ever again</span>
+  </div>
+</div>
+
+<!-- ─── LIVE RATES + CALCULATOR ──────────────────── -->
+<section class="section rates-section" id="rates" aria-labelledby="rates-heading">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label">Live Exchange Rates</p>
+      <h2 class="section-title" id="rates-heading">See what your trip actually costs.</h2>
+      <p class="section-sub">Live Google USD/INR rate, with exactly what you'd pay using Scapia versus an ordinary credit card or cash.</p>
+    </div>
+    <div class="rates-layout reveal">
+
+      <!-- Left: 4 live rate cards -->
+      <div class="rates-panel">
+        <div class="rates-panel-header">
+          <span class="rates-panel-title">USD → INR today</span>
+          <div class="rates-meta">
+            <span class="live-dot"></span>
+            <span id="last-updated">Fetching…</span>
+          </div>
+        </div>
+        <div class="rate-card">
+          <div class="rc-left">
+            <div class="rc-name">Google Rate</div>
+            <div class="rc-badge badge-neutral">Reference</div>
+            <div class="rc-spread">Live interbank benchmark</div>
+          </div>
+          <div class="rc-value" id="rate-mid">—</div>
+        </div>
+        <div class="rate-card featured">
+          <div class="rc-left">
+            <div class="rc-name">Scapia Card</div>
+            <div class="rc-badge badge-green">✦ Best Rate</div>
+            <div class="rc-spread">Google rate + 0.064% (~typically)</div>
+          </div>
+          <div class="rc-value green" id="rate-scapia">—</div>
+        </div>
+        <div class="rate-card">
+          <div class="rc-left">
+            <div class="rc-name">Ordinary Credit Card</div>
+            <div class="rc-badge badge-orange">~3.5% forex charge</div>
+            <div class="rc-spread">Google rate + 3.564% (~typically)</div>
+          </div>
+          <div class="rc-value orange" id="rate-forex">—</div>
+        </div>
+        <div class="rate-card">
+          <div class="rc-left">
+            <div class="rc-name">Cash Exchange</div>
+            <div class="rc-badge badge-red">Counter rates</div>
+            <div class="rc-spread">Google rate + 1.5% (~typically)</div>
+          </div>
+          <div class="rc-value red" id="rate-cash">—</div>
+        </div>
+      </div>
+
+      <!-- Right: calculator -->
+      <div class="calc-panel">
+        <div class="calc-panel-title">How much will your trip cost in rupees?</div>
+        <div class="calc-usd-display" id="calc-display">$2,000</div>
+        <div class="calc-usd-sub">Move the slider to match your trip budget</div>
+        <div class="slider-wrap">
+          <input type="range" id="calc-slider" min="500" max="10000" step="100" value="2000" aria-label="Trip spend in USD" />
+          <div class="slider-labels"><span>$500</span><span>$10,000</span></div>
+        </div>
+        <div class="calc-results">
+          <div class="calc-row">
+            <div class="cr-left">
+              <span class="cr-dot" style="background:var(--text3)"></span>
+              <span class="cr-name">Online Mid-Market Rates (Google Rates)</span>
+            </div>
+            <span class="cr-value" id="cr-mid">—</span>
+          </div>
+          <div class="calc-row best">
+            <div class="cr-left">
+              <span class="cr-dot" style="background:var(--green)"></span>
+              <span class="cr-name">Scapia Card</span>
+            </div>
+            <div class="cr-right">
+              <span class="cr-value green" id="cr-scapia">—</span>
+              <span class="cr-best">Cheapest</span>
+            </div>
+          </div>
+          <div class="calc-row">
+            <div class="cr-left">
+              <span class="cr-dot" style="background:var(--orange)"></span>
+              <span class="cr-name">Ordinary Credit Card</span>
+            </div>
+            <span class="cr-value orange" id="cr-forex">—</span>
+          </div>
+          <div class="calc-row">
+            <div class="cr-left">
+              <span class="cr-dot" style="background:var(--red)"></span>
+              <span class="cr-name">Cash</span>
+            </div>
+            <span class="cr-value red" id="cr-cash">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AIRPORT BENEFITS ──────────────────────────── -->
+<section class="section airport-section" id="airport" aria-labelledby="airport-heading">
+  <div class="container airport-inner">
+    <div class="airport-layout">
+
+      <!-- Left: copy -->
+      <div class="reveal">
+        <p class="section-label" style="font-size:1em;">Domestic Airport Benefit</p>
+        <h2 class="section-title" id="airport-heading">Every time you fly,<br/><span style="color:var(--amber)">up to ₹1,000 back.</span></h2>
+        <p class="airport-headline-sub">Most airport perks lock you into a crowded lounge. Scapia lets you spend your ₹1,000 however you want — eat at your favourite airport restaurant, browse the bookshop, get a quick spa, or shop before you board.</p>
+        <div class="airport-free-tag">
+          <span>✦</span>
+          Works at 100+ domestic airports
+        </div>
+        <div class="airport-cta-group">
+          <a href="https://ankitd.short.gy/Scapia02" class="btn-primary">Get This Card — Free Forever</a>
+        </div>
+        <p class="airport-fine">Activates when you spend <strong>₹20,000/month</strong> across your Scapia Visa &amp; RuPay cards combined.</p>
+      </div>
+
+      <!-- Right: benefit card -->
+      <div class="reveal" style="animation-delay:.12s">
+        <div class="airport-card">
+          <div class="airport-card-top">
+            <div class="airport-card-eyebrow">
+              <span class="adot"></span>
+              Airport Privileges · Scapia
+            </div>
+            <div class="airport-amount-wrap">
+              <div class="airport-amount">₹1,000</div>
+              <div class="airport-amount-badge">Per visit</div>
+            </div>
+            <div class="airport-amount-sub">back on every airport visit</div>
+            <div class="airport-amount-qualifier">At 100+ domestic airports across India</div>
+          </div>
+          <div class="airport-card-body">
+            <div class="airport-perks">
+              <div class="airport-perk">
+                <div class="airport-perk-icon icon-food">🍽️</div>
+                <div>
+                  <div class="airport-perk-label">Dine (for FREE)</div>
+                  <div class="airport-perk-desc">Restaurants, cafés &amp; food courts inside the terminal</div>
+                </div>
+              </div>
+              <div class="airport-perk">
+                <div class="airport-perk-icon icon-shop">🛍️</div>
+                <div>
+                  <div class="airport-perk-label">Shop (for FREE)</div>
+                  <div class="airport-perk-desc">Books, fashion, electronics, gifts &amp; duty-free retail</div>
+                </div>
+              </div>
+              <div class="airport-perk">
+                <div class="airport-perk-icon icon-spa">💆</div>
+                <div>
+                  <div class="airport-perk-label">Spa (for FREE)</div>
+                  <div class="airport-perk-desc">Wellness &amp; massage outlets at select terminals</div>
+                </div>
+              </div>
+            </div>
+            <div class="airport-unlock">
+              <strong>How it works:</strong> Pay with your Scapia card at any eligible airport outlet. Get up to <strong>₹1,000 back</strong> as Scapia Coins — credited automatically. No forms, no counters, no waiting.
+            </div>
+            <div class="airport-lounge-note">
+              Nothing at the airport catches your fancy? Use it to access the lounge instead.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CASH vs SCAPIA ────────────────────────────── -->
+<section class="section" id="benefits" aria-labelledby="compare-heading">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <p class="section-label">Why Switch</p>
+      <h2 class="section-title" id="compare-heading">Carry memories.<br/>Not currency.</h2>
+    </div>
+    <div class="compare-grid reveal">
+      <div class="compare-col">
+        <div class="compare-header">
+          <span class="compare-header-icon">💵</span>
+          <div>
+            <div class="compare-header-title">Cash</div>
+            <div class="compare-header-sub">The old way</div>
+          </div>
+        </div>
+        <div>
+          <div class="compare-row"><span class="compare-row-icon">🏦</span><span class="compare-row-text neg">Exchange money before travelling</span></div>
+          <div class="compare-row"><span class="compare-row-icon">👜</span><span class="compare-row-text neg">Carry a bulky wallet of foreign notes</span></div>
+          <div class="compare-row"><span class="compare-row-icon">♻️</span><span class="compare-row-text neg">Leftover currency to exchange back home</span></div>
+          <div class="compare-row"><span class="compare-row-icon">🕑</span><span class="compare-row-text neg">Queues at airport exchange counters</span></div>
+          <div class="compare-row"><span class="compare-row-icon">📉</span><span class="compare-row-text neg">Poor rates with high counter spreads</span></div>
+          <div class="compare-row"><span class="compare-row-icon">⚠️</span><span class="compare-row-text neg">Risk of theft or loss abroad</span></div>
+        </div>
+      </div>
+      <div class="compare-vs">
+        <div class="vs-pill">VS</div>
+      </div>
+      <div class="compare-col better">
+        <div class="compare-header" style="background:var(--green-dim);border-bottom-color:rgba(34,197,94,0.15)">
+          <img src="scapia-card.png" alt="" style="width:48px;border-radius:6px" />
+          <div>
+            <div class="compare-header-title">Scapia Card</div>
+            <div class="compare-header-sub" style="color:var(--green)">The smart way</div>
+          </div>
+        </div>
+        <div>
+          <div class="compare-row"><span class="compare-row-icon">✅</span><span class="compare-row-text pos">Just carry your card — always ready</span></div>
+          <div class="compare-row"><span class="compare-row-icon">💳</span><span class="compare-row-text pos">One slim card replaces bundles of cash</span></div>
+          <div class="compare-row"><span class="compare-row-icon">🎯</span><span class="compare-row-text pos">Nothing to exchange or convert back</span></div>
+          <div class="compare-row"><span class="compare-row-icon">⚡</span><span class="compare-row-text pos">Tap and pay in seconds, anywhere</span></div>
+          <div class="compare-row"><span class="compare-row-icon">📈</span><span class="compare-row-text pos">Near-Google rates, zero forex markup</span></div>
+          <div class="compare-row"><span class="compare-row-icon">🔒</span><span class="compare-row-text pos">Instant lock/unlock from your phone</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TRUST / WHY SCAPIA ────────────────────────── -->
+<section class="section" style="background:var(--bg2)" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <p class="section-label">Why Scapia</p>
+      <h2 class="section-title" id="trust-heading">Built for the international traveller.</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="trust-title">Zero Forex Markup</div>
+        <div class="trust-body">Pay abroad in local currency at near-Google rates, with zero forex markup added. What you see on your phone is almost exactly what you pay — unlike most cards that silently add 3–3.5%.</div>
+      </div>
+      <div class="trust-card reveal" style="animation-delay:.08s">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="trust-title">Lifetime Free — No Annual Fee</div>
+        <div class="trust-body">₹0 joining fee. ₹0 annual fee. No minimum spend required to keep the card. You get all benefits — zero forex, airport perks, Visa + RuPay — at no cost, forever.</div>
+      </div>
+      <div class="trust-card reveal" style="animation-delay:.12s">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="trust-title">Accepted Everywhere Visa Is</div>
+        <div class="trust-body">100M+ merchants across 190+ countries. From street cafés in Bangkok to flagship stores in London — if Visa works there, Scapia does too. Tap and go.</div>
+      </div>
+      <div class="trust-card reveal" style="animation-delay:.16s">
+        <div class="trust-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="trust-title">Visa + RuPay, Both Included</div>
+        <div class="trust-body">You get two physical cards — a Visa Signature for international spending and a complimentary RuPay card for UPI at home. One credit limit, one statement, two networks.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WORLD MAP ──────────────────────────────────── -->
+<section class="section world-section" aria-labelledby="world-heading">
+  <div class="container">
+    <div class="world-inner reveal">
+      <p class="section-label">Global Acceptance</p>
+      <h2 class="section-title" id="world-heading">Works anywhere Visa is accepted.</h2>
+      <p class="section-sub" style="margin:0 auto">From Tokyo to Times Square, tap and go.</p>
+      <div class="world-map-wrap">
+        <div class="world-img-wrap">
+          <img
+            src="world-map.png"
+            alt="World map — Scapia accepted at 100M+ merchants in 190+ countries"
+            loading="lazy"
+            class="world-map-img"
+          />
+          <!-- City pin overlays positioned as % over the image 
+          <div class="map-pin" style="left:15.5%;top:36%" data-city="🇺🇸 USA"></div>
+          <div class="map-pin" style="left:44.8%;top:22%" data-city="🇬🇧 UK"></div>
+          <div class="map-pin" style="left:58.2%;top:33%" data-city="🇦🇪 Dubai"></div>
+          <div class="map-pin" style="left:63.5%;top:30%" data-city="🇮🇳 India"></div>
+          <div class="map-pin" style="left:73%;top:36%" data-city="🇹🇭 Thailand"></div>
+          <div class="map-pin" style="left:75.5%;top:41%" data-city="🇸🇬 Singapore"></div>
+          <div class="map-pin" style="left:83.8%;top:22%" data-city="🇯🇵 Japan"></div>
+          -->
+        </div>
+        <div class="world-cities">
+          <div class="world-city"><span>🇺🇸</span>USA</div>
+          <div class="world-city"><span>🇬🇧</span>UK</div>
+          <div class="world-city"><span>🇯🇵</span>Japan</div>
+          <div class="world-city"><span>🇹🇭</span>Thailand</div>
+          <div class="world-city"><span>🇻🇳</span>Vietnam</div>
+          <div class="world-city"><span>🇸🇬</span>Singapore</div>
+          <div class="world-city"><span>🇦🇪</span>Dubai</div>
+          <div class="world-city"><span>🌍</span>190+ countries</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FAQ ───────────────────────────────────────── -->
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title" id="faq-heading">Common questions.</h2>
+    </div>
+    <div class="faq-list reveal" role="list">
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Can I use Scapia internationally?
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a">Yes. Scapia is a Visa Signature card accepted at all international merchants where Visa is supported — over 100 million merchants across 190+ countries. Just tap and pay in local currency.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Does Scapia charge forex markup?
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a">No. Scapia charges zero forex markup on international transactions. Most ordinary credit cards add 3–3.5% on every foreign transaction — Scapia doesn't, which adds up significantly on longer trips.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          How does the airport benefit work?
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a">Spend ₹20,000 in a calendar month across your Scapia Visa and RuPay cards combined, and the benefit unlocks. Every time you're at a domestic airport that month, you can dine, shop, or spa at eligible outlets and get up to ₹1,000 back as Scapia Coins. Prefer the lounge? You can use the benefit for that instead.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Is this really free? No hidden fees?
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a">Yes — truly free. ₹0 joining fee, ₹0 annual fee, no minimum spend to keep the card. You pay interest only if you carry a balance, just like any credit card. There is no charge for holding or using Scapia.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          How is the exchange rate calculated?
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a">International transactions are settled at the Visa wholesale rate, which closely tracks the Google/interbank rate. Since Scapia adds no forex markup of its own, you get the closest rate to the live Google rate that any credit card can offer — versus the ~3.5% markup added by most ordinary credit cards.</div>
+      </div>
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Can I withdraw cash internationally?
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><line x1="9" y1="3" x2="9" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="15" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="faq-a">You can withdraw cash from international ATMs using Scapia. However, ATM withdrawals may attract separate cash advance fees. For the best rates, we recommend using the card directly for purchases rather than withdrawing cash.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ──────────────────────────────────── -->
+<section class="cta-section" id="apply" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <div class="cta-card-preview">
+      <img src="scapia-card.png" alt="Scapia Credit Card" loading="lazy" />
+    </div>
+    <h2 id="cta-heading">Ready for your next<br/>international trip?</h2>
+    <p>Travel lighter. Spend smarter. Never queue at a forex counter again.</p>
+    <a href="https://ankitd.short.gy/Scapia02" class="btn-primary btn-primary-lg">Apply for Scapia — Free Forever →</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <img src="scapia-logo.png" alt="Scapia" />
+      </div>
+      <p class="footer-tagline">The travel credit card built for Indians going global.</p>
+    </div>
+    <div class="footer-links-col">
+      <h4>Product</h4>
+      <a href="#rates">Exchange Rates</a>
+      <a href="#airport">Airport Benefits</a>
+      <a href="#benefits">Why Scapia</a>
+    </div>
+    <div class="footer-links-col">
+      <h4>Support</h4>
+      <a href="#faq">FAQ</a>
+      <a href="https://ankitd.short.gy/Scapia02">Apply Now</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-disclaimer">Exchange rates shown are illustrative based on the live Google USD/INR rate. Actual Visa settlement rates may vary slightly depending on the date and time of settlement. Scapia and Cash rates are illustrative comparisons based on fixed percentage spreads and should not be interpreted as guaranteed rates. Airport benefit eligibility subject to monthly spend conditions. Scapia is issued by Federal Bank. ✦ No Scapia Coins are earned on international transactions.</p>
+    <p class="footer-copy">© 2025 Scapia</p>
+  </div>
+</footer>
+
+<!-- ─── SCRIPTS ────────────────────────────────────── -->
+<script>
+/* ── Nav scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive:true });
+
+/* ── Scroll reveal ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ── FAQ ── */
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.setAttribute('aria-expanded','false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if(!open){ btn.setAttribute('aria-expanded','true'); btn.nextElementSibling.classList.add('open'); }
+  });
+});
+
+/* ── Exchange rate engine ── */
+// Spreads derived from reference rates (Google ₹94.36, Jun 2026)
+const SPREAD_SCAPIA = 0.000636;  // +0.064%
+const SPREAD_FOREX  = 0.03564;   // +3.564% — ordinary credit card
+const SPREAD_CASH   = 0.015;     // +1.5%
+
+let midRate = null, fetchedAt = null;
+
+const fmtRate = r => '₹' + r.toFixed(2);
+const fmtINR  = n => {
+  const s = Math.round(n).toString();
+  if(s.length <= 3) return '₹' + s;
+  return '₹' + s.slice(0,-3).replace(/\B(?=(\d{2})+(?!\d))/g,',') + ',' + s.slice(-3);
+};
+
+function animVal(el, from, to, dur=600, fmt=fmtINR){
+  const t0 = performance.now();
+  const run = t => {
+    const p = Math.min((t-t0)/dur, 1);
+    el.textContent = fmt(from + (to-from) * (1-Math.pow(1-p,3)));
+    if(p < 1) requestAnimationFrame(run); else el.textContent = fmt(to);
+  };
+  requestAnimationFrame(run);
+}
+
+function calcRates(mid){ return { mid, scapia:mid*(1+SPREAD_SCAPIA), forex:mid*(1+SPREAD_FOREX), cash:mid*(1+SPREAD_CASH) }; }
+
+function updateUI(mid){
+  const r = calcRates(mid);
+  // Hero badges
+  document.getElementById('hero-rate').textContent = fmtRate(mid);
+  const hs = document.getElementById('hero-scapia-rate');
+  if(hs) hs.textContent = fmtRate(r.scapia);
+  // Rate cards
+  [['rate-mid',r.mid],['rate-scapia',r.scapia],['rate-forex',r.forex],['rate-cash',r.cash]].forEach(([id,val]) => {
+    const el = document.getElementById(id);
+    const prev = parseFloat(el.dataset.prev || val);
+    el.dataset.prev = val;
+    animVal(el, prev, val, 700, fmtRate);
+  });
+  updateCalc(mid);
+}
+
+function updateCalc(mid){
+  if(!mid) return;
+  const usd = parseInt(document.getElementById('calc-slider').value);
+  const r = calcRates(mid);
+  document.getElementById('calc-display').textContent = '$' + usd.toLocaleString();
+  document.getElementById('cr-mid').textContent    = fmtINR(usd * r.mid);
+  document.getElementById('cr-scapia').textContent = fmtINR(usd * r.scapia);
+  document.getElementById('cr-forex').textContent  = fmtINR(usd * r.forex);
+  document.getElementById('cr-cash').textContent   = fmtINR(usd * r.cash);
+}
+
+/* ── Fetch rate — waterfall of 3 sources ── */
+async function fetchRate(){
+  document.getElementById('last-updated').innerHTML = '<span class="spin"></span>';
+  const sources = [
+    async () => { const today=new Date().toISOString().slice(0,10); const res=await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${today}/v1/currencies/usd.json`); if(!res.ok) throw 0; return (await res.json()).usd.inr; },
+    async () => { const res=await fetch('https://latest.currency-api.pages.dev/v1/currencies/usd.json'); if(!res.ok) throw 0; return (await res.json()).usd.inr; },
+    async () => { const res=await fetch('https://open.er-api.com/v6/latest/USD'); if(!res.ok) throw 0; const d=await res.json(); if(d.result!=='success') throw 0; return d.rates.INR; },
+  ];
+  for(const src of sources){
+    try{ const rate=await src(); if(rate>50&&rate<200){ midRate=rate; fetchedAt=Date.now(); updateUI(midRate); startTimer(); return; } }catch(e){}
+  }
+  midRate = midRate || 94.36;
+  fetchedAt = Date.now();
+  updateUI(midRate);
+  document.getElementById('last-updated').textContent = 'Cached rate';
+  startTimer();
+}
+
+let timer;
+function startTimer(){
+  clearInterval(timer);
+  timer = setInterval(() => {
+    const s = Math.floor((Date.now()-fetchedAt)/1000);
+    document.getElementById('last-updated').textContent = s<60 ? `${s}s ago` : `${Math.floor(s/60)}m ago`;
+    if(s >= 300) fetchRate();
+  }, 1000);
+}
+
+fetchRate();
+document.getElementById('calc-slider').addEventListener('input', () => { if(midRate) updateCalc(midRate); });
+</script>
+</body>
+</html>
